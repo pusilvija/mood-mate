@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 
 from components.mood_tracker import mood_tracker_page
+from components.random_facts import get_random_fact
 
 st.set_page_config(page_title="Mental Health Check-in App", layout="wide")
 
@@ -19,6 +20,7 @@ selected = option_menu(
 
 if selected == "Mood Tracker":
     mood_tracker_page() 
+    get_random_fact()
 
 elif selected == "Journal":
     st.subheader("Journal")
