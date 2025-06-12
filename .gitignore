@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+
+# Environment variables
+*.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Streamlit cache and logs
+.streamlit/
+*.log
+
+# Databricks temporary files
+*.parquet
+*.tmp
+
+# VS Code settings
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Linux system files
+*.swp
