@@ -3,6 +3,7 @@ from streamlit_option_menu import option_menu
 
 from components.tracker import tracker_page
 from components.random_facts import get_random_fact
+from components.trends import trends_page
 
 st.set_page_config(page_title="Mental Health Check-in App", layout="wide")
 
@@ -27,7 +28,7 @@ elif selected == "Journal":
     # TODO: Add journaling UI here
 
 elif selected == "Trends":
-    st.subheader("Trends")
+    trends_page()
     # TODO: Add visualization here
 
 # elif selected == "Chatbot":
