@@ -1,6 +1,7 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 
+from components.journal import journal_page
 from components.tracker import tracker_page
 from components.random_facts import get_random_fact
 from components.trends import trends_page
@@ -24,8 +25,7 @@ if selected == "Tracker":
     # get_random_fact()
 
 elif selected == "Journal":
-    st.subheader("Journal")
-    # TODO: Add journaling UI here
+    journal_page()
 
 elif selected == "Trends":
     trends_page()

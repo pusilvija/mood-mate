@@ -26,15 +26,15 @@ def tracker_page():
     with col2:
         sleep_selected = st.checkbox("Sleep", value=True)
     with col3:
-        exercise_selected = st.checkbox("Exercise", value=False)
+        exercise_selected = st.checkbox("Exercise", value=True)
     with col4:
-        caffeine_selected = st.checkbox("Caffeine", value=False)
+        caffeine_selected = st.checkbox("Caffeine", value=True)
     with col5:
-        water_selected = st.checkbox("Water", value=False)
+        water_selected = st.checkbox("Water", value=True)
     with col6:
-        screen_selected = st.checkbox("Screen Time", value=False)
+        screen_selected = st.checkbox("Screen Time", value=True)
     with col7:
-        meditation_selected = st.checkbox("Meditation", value=False)
+        meditation_selected = st.checkbox("Meditation", value=True)
 
     now = datetime.now()
 
