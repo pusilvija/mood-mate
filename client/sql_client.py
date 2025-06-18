@@ -1,3 +1,4 @@
+import math
 import pandas as pd
 from databricks import sql
 from .config import get_config
@@ -51,8 +52,17 @@ class DatabricksSQLClient:
         cursor.close()
 
     def insert_row(self, table_full_name, row_data: dict):
+        def sql_repr(value):
+            if value is None or (isinstance(value, float) and math.isnan(value)):
+                return "NULL"
+            elif isinstance(value, str):
+                escaped = value.replace("'", "''")
+                return f"'{escaped}'"
+            else:
+                return str(value)
+
         columns = ', '.join(row_data.keys())
-        values = ', '.join([f"'{str(value)}'" for value in row_data.values()])
+        values = ', '.join([sql_repr(value) for value in row_data.values()])
         query = f"INSERT INTO {table_full_name} ({columns}) VALUES ({values})"
         cursor = self.conn.cursor()
         cursor.execute(query)
